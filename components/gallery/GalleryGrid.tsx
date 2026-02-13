@@ -85,19 +85,19 @@ export function GalleryGrid({ photos, content }: GalleryGridProps) {
             onClick={() => setActiveIndex(null)}
           >
             <motion.div
-              className="w-full max-w-xl rounded-2xl border border-gold/30 bg-white p-4 shadow-soft"
+              className="w-full max-w-lg rounded-2xl border border-gold/30 bg-white p-4 shadow-soft"
               initial={shouldReduceMotion ? false : { scale: 0.95, opacity: 0 }}
               animate={shouldReduceMotion ? { opacity: 1 } : { scale: 1, opacity: 1 }}
               exit={shouldReduceMotion ? { opacity: 0 } : { scale: 0.96, opacity: 0 }}
               transition={{ duration: 0.2 }}
               onClick={(event) => event.stopPropagation()}
             >
-              <div className="relative aspect-[4/5] overflow-hidden rounded-xl bg-amber-100">
+              <div className="relative h-[52vh] max-h-[560px] overflow-hidden rounded-xl bg-amber-100 sm:h-[58vh]">
                 <Image
                   src={activePhoto.src}
                   alt={activePhoto.alt}
                   fill
-                  sizes="(max-width: 768px) 92vw, 680px"
+                  sizes="(max-width: 768px) 88vw, 540px"
                   className="object-contain"
                 />
               </div>
