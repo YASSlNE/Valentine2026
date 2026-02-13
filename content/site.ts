@@ -93,7 +93,7 @@ export const siteContent = {
     question: "Even from 5000 km away — will you be my Valentine, Farah? 💍",
     yesText: "Tab3an ya bibi 💛",
     noText: "Hmm... still yes 💛",
-    yesResponse: "🎉 Best answer I'll ever get. My golden yes, forever.",
+    yesResponse: "A7la bouquet l a7la friha fl dnya 💐 (awka chayakhtek bel lilies)",
     noResponse: "Even your 'no' sounds like nhebek. I'll take it. 😏",
     bouquetImage: "/photos/bouquet.webp",
     nextButton: "See 20 Reasons →"
