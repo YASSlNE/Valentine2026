@@ -28,7 +28,7 @@ export function ValentineQuestion({ content }: ValentineQuestionProps) {
     }
 
     if (answer === "no") {
-      return content.noResponse;
+      return content.yesResponse;
     }
 
     return null;
