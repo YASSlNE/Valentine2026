@@ -13,19 +13,19 @@ type EnvelopeIntroProps = {
 export function EnvelopeIntro({ content }: EnvelopeIntroProps) {
   const shouldReduceMotion = useReducedMotion();
   const [phase, setPhase] = useState<"idle" | "waiting" | "opened">("idle");
-  const [countdown, setCountdown] = useState(3);
+  const [countdown, setCountdown] = useState(10);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const handleClick = useCallback(() => {
     if (phase === "opened") {
       setPhase("idle");
-      setCountdown(3);
+      setCountdown(10);
       return;
     }
     if (phase === "waiting") return;
 
     setPhase("waiting");
-    setCountdown(3);
+    setCountdown(10);
   }, [phase]);
 
   useEffect(() => {

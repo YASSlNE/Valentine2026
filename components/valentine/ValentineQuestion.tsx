@@ -68,7 +68,7 @@ export function ValentineQuestion({ content }: ValentineQuestionProps) {
           </button>
           <button
             type="button"
-            onClick={() => setAnswer("no")}
+            onClick={() => setAnswer("yes")}
             className="rounded-full border border-gold/35 bg-white/80 px-5 py-2 text-sm font-semibold text-amber-900 transition hover:bg-white"
           >
             {content.noText}
