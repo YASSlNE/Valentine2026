@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { useMemo, useState } from "react";
@@ -74,13 +75,31 @@ export function ValentineQuestion({ content }: ValentineQuestionProps) {
           </button>
         </div>
         {responseText ? (
-          <motion.p
+          <motion.div
             initial={shouldReduceMotion ? false : { opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-sm text-amber-900/80"
+            className="space-y-4"
           >
-            {responseText}
-          </motion.p>
+            <p className="text-sm text-amber-900/80">
+              {responseText}
+            </p>
+            {answer === "yes" && content.bouquetImage ? (
+              <motion.div
+                initial={shouldReduceMotion ? false : { scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ delay: 0.3, duration: 0.5 }}
+                className="mx-auto max-w-xs overflow-hidden rounded-2xl border border-gold/30 shadow-soft"
+              >
+                <Image
+                  src={content.bouquetImage}
+                  alt="Mahmoud holding a bouquet for Farah"
+                  width={400}
+                  height={500}
+                  className="h-auto w-full"
+                />
+              </motion.div>
+            ) : null}
+          </motion.div>
         ) : null}
 
         <Link

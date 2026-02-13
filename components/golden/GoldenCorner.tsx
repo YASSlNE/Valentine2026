@@ -25,13 +25,14 @@ export function GoldenCorner({ content }: GoldenCornerProps) {
         <p className="gold-pill">{content.dogLabel}</p>
         <p className="text-sm text-amber-900/80">{content.caption}</p>
 
-        <motion.div
-          className="mx-auto flex h-40 w-40 items-center justify-center rounded-full border border-gold/35 bg-gradient-to-br from-lily/45 to-amber-100 text-7xl"
-          animate={shouldReduceMotion ? undefined : { rotate: [0, -4, 4, 0] }}
-          transition={shouldReduceMotion ? undefined : { duration: 2.8, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
-        >
-          🐶
-        </motion.div>
+        <div className="mx-auto h-48 w-48 overflow-hidden rounded-full border border-gold/35 bg-gradient-to-br from-lily/45 to-amber-100">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={content.gifUrl}
+            alt="Happy golden retriever"
+            className="h-full w-full object-cover"
+          />
+        </div>
 
         <button
           type="button"
