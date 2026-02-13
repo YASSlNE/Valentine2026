@@ -19,15 +19,15 @@ export async function POST(request: Request) {
     passcode = getPasscode();
     secret = getSessionSecret();
   } catch {
-    return NextResponse.redirect(new URL("/unlock?error=1", request.url));
+    return NextResponse.redirect(new URL("/unlock?error=1", request.url), 303);
   }
 
   if (passcodeInput !== passcode) {
-    return NextResponse.redirect(new URL("/unlock?error=1", request.url));
+    return NextResponse.redirect(new URL("/unlock?error=1", request.url), 303);
   }
 
   const token = await createSessionToken(secret);
-  const response = NextResponse.redirect(new URL("/home", request.url));
+  const response = NextResponse.redirect(new URL("/home", request.url), 303);
 
   response.cookies.set({
     name: SESSION_COOKIE_NAME,
