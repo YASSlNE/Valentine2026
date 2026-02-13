@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-cream: #fff9ee;
+  --color-lily: #f8d860;
+  --color-gold: #d8b56d;
+  --color-ink: #2f2518;
+  --color-blush: #f7eee2;
+  --radius-card: 1.25rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--color-ink);
+  background:
+    radial-gradient(65rem 35rem at -10% -20%, rgba(248, 216, 96, 0.2), transparent 60%),
+    radial-gradient(42rem 20rem at 110% 0%, rgba(218, 189, 121, 0.18), transparent 70%),
+    linear-gradient(180deg, #fffaf1 0%, #fff6e7 55%, #fff3e1 100%);
+  font-family: var(--font-sans), sans-serif;
+}
+
+.sparkle-overlay {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 12% 18%, rgba(255, 255, 255, 0.65) 0 1.5px, transparent 2px),
+    radial-gradient(circle at 75% 30%, rgba(255, 255, 255, 0.35) 0 1px, transparent 2px),
+    radial-gradient(circle at 46% 76%, rgba(255, 255, 255, 0.45) 0 1.5px, transparent 2.4px);
+  opacity: 0.4;
+}
+
+.panel-card {
+  border-radius: var(--radius-card);
+  border: 1px solid rgba(216, 181, 109, 0.25);
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 12px 35px rgba(82, 62, 21, 0.1);
+  backdrop-filter: blur(8px);
+}
+
+.section-title {
+  font-family: var(--font-serif), serif;
+  letter-spacing: -0.01em;
+}
+
+.gold-pill {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  background: rgba(248, 216, 96, 0.3);
+  border: 1px solid rgba(216, 181, 109, 0.4);
+  color: #5d4618;
+  padding: 0.35rem 0.7rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.polaroid {
+  border-radius: 0.85rem;
+  border: 1px solid rgba(44, 34, 17, 0.12);
+  background: #fff;
+  padding: 0.55rem 0.55rem 0.9rem;
+  box-shadow: 0 10px 25px rgba(65, 47, 16, 0.15);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
